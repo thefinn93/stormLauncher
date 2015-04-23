@@ -90,7 +90,7 @@ class launchControl(Frame):
 
    def turretUp(self, event):
       self.message1.set("Turret Up.")
-      self.dev.ctrl_transfer(0x21,0x09,0,0,[0x02,0x02,0x00,0x00,0x00,0x00,0x00,0x00]) 
+      self.dev.ctrl_transfer(0x21,0x09,0,0,[0x02,0x02,0x00,0x00,0x00,0x00,0x00,0x00])
 
    def turretDown(self, event):
       self.message1.set("Turret Down.")
@@ -121,6 +121,4 @@ class launchControl(Frame):
 
 
 if __name__ == '__main__':
-   if not os.geteuid() == 0:
-       sys.exit("Script must be run as root.")
    launchControl().mainloop()

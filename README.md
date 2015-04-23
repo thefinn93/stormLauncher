@@ -9,15 +9,16 @@ There are a few projects for using older launchers in Linux, but I couldn't find
 This script requires PyUSB 1.0+, apt in Debian/Ubuntu installs 0.4.
 
 Also, on Debian\Ubuntu systems you need the __python-imaging-tk__
-    
-It also requires that you run it as root unless you want to spend an afternoon playing with udev rules :/
+
+
 
 ## Getting Started:
 
     git clone git@github.com:nmilford/stormLauncher.git
     cd stormLauncher
-    chmod +x stormLauncher.py
-    sudo ./stormLauncher.py
+    sudo cp 54-missilelauncher.rules /etc/udev/rules.d
+    sudo service udev restart
+    ./stormLauncher.py
 
 ## Usage:
 
